@@ -11,3 +11,5 @@ url: str = os.environ.get("SUPABASE_URL")
 key: str = os.environ.get("SUPABASE_KEY")
 # Create a new Supabase client
 supabase: Client = create_client(url, key)
+
+data = supabase.table("Covid-19").select("*").execute()
